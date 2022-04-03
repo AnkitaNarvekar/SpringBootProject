@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List Purchased Products</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+    <div>
+        <form th:action="@{/logout}" method="post">
+            <p>
+                Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+            </p>
+            <input type="submit" value="Sign Out" />
+        </form>
+    </div>
+    <div>
+        <h1>List of Purchased Products</h1>
+    </div>
+     
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Purchased ID</th>
+                    <th>Purchased Date</th>
+                    <th>Purchased Category</th>
+                    <th>Purchased User Name</th>
+                    <th>Purchased Product Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="Order: ${listorders}">
+                    <td th:text="${Order.oid}">Purchased ID</td>
+                    <td th:text="${Order.date}">Purchased Date</td>
+                    <td th:text="${Order.ocategory}">Purchased Category</td>
+                    <td th:text="${Order.oname}">Purchased User Name</td>
+                    <td th:text="${Order.oproduct}">Purchased Product Name</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

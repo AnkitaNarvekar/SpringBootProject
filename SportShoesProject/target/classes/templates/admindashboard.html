@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List Users</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+    <div>
+        <form th:action="@{/logout}" method="post">
+            <p>
+                Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+            </p>
+            <input type="submit" value="Sign Out" /><br/><br/>
+        </form>
+        
+     <form action="/changepass">
+     	<input type="submit" value="Change Password"/><br/><br/>
+     </form>
+        
+     <form action="/allusers">
+     	<input type="submit" value="List of All Users"/><br/><br/>
+     </form>
+     
+     <form action="/searchusersbyemail">
+     	<input type="submit"  value="Search User By Email"/><br/><br/>
+     </form>
+
+	<form action="/allpurchasedproducts">
+     	<input type="submit" value="Purchase Report"/><br/><br/>
+     </form>
+     
+     <form action="/productdate">
+     	<input type="submit" value="Search Purchase by date"/><br/><br/>
+     </form>
+     
+     <form action="/productcategory">
+     	<input type="submit" value="Search Purchase by category"/><br/><br/>
+     </form>
+
+</div>
+</div>
+</body>
+</html>

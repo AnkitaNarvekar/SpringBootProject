@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List Users</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<table width="100%" border=1>
+<tr>
+<td width=50%>
+<center>
+<h1>Welcome to Admin Spring Boot Security</h1>
+<% if("true".equals(request.getParameter("adminerror"))) {%>
+	<h2 style="color:red;">Invalid username / password</h2>
+<% } %>
+<form method="POST" action="/admin/login">
+	User Name : <input type="text" name="username" value="admin"/><br><br>
+	Password  : <input type="password" name="password" value="password"/><br><br>
+	<input type="submit" name="submit"/>
+</form>
+</center>
+</td>
+
+<td width=50%>
+<center>
+<h1>Welcome to Spring Boot Security</h1>
+<% if("true".equals(request.getParameter("usererror"))) {%>
+	<h2 style="color:red;">Invalid username / password</h2>
+<% } %>
+<form method="POST" action="/login">
+	User Name : <input type="text" name="username" value="user"/><br><br>
+	Password  : <input type="password" name="password" value="password"/><br><br>
+	<input type="submit" name="submit"/>
+</form>
+</center>
+</td>
+</tr>
+
+</table>
+</body>
+</html>
